@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TaskManagerApi.Models;
 
-namespace TaskManagerApi.Models
+namespace TaskManagerApi.Data.Dtos.CategoryDto
 {
-    public class Category
+    public class CreateCategoryDto
     {
-        [Key]
-        public long Id { get; set; }
         [Required]
         [MaxLength(50)]
         [MinLength(3)]
@@ -13,6 +12,6 @@ namespace TaskManagerApi.Models
 
         [MaxLength(7)] // Para hex colors como #FF5733 
         public string? Color { get; set; }
-        public virtual ICollection<TaskOn> Tasks { get; set; } = new List<TaskOn>();
+
     }
 }
